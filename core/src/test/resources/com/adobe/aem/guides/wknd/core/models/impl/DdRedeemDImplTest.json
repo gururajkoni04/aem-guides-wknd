@@ -1,0 +1,16 @@
+{
+  "ddredeemd": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/ddredeemd",
+    "variant": "default"
+  },
+  "ddredeemd-invalid-variant": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/ddredeemd",
+    "variant": "<script>alert(1)</script>"
+  },
+  "ddredeemd-empty": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/ddredeemd"
+  }
+}
