@@ -1,0 +1,16 @@
+{
+  "redeemcomponent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/redeemcomponent",
+    "variant": "default"
+  },
+  "redeemcomponent-invalid-variant": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/redeemcomponent",
+    "variant": "<script>alert(1)</script>"
+  },
+  "redeemcomponent-empty": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/redeemcomponent"
+  }
+}

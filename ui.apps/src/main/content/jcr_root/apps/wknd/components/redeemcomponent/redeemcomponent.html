@@ -1,0 +1,12 @@
+<!--/* Redeem Component — presentation only; all logic lives in com.adobe.aem.guides.wknd.core.models.RedeemComponent. */-->
+<sly data-sly-use.card="com.adobe.aem.guides.wknd.core.models.RedeemComponent"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${false}"></sly>
+<article data-sly-test="${hasContent}"
+         id="${card.id}"
+         class="cmp-redeem-component cmp-redeem-component--${card.variant}"
+         data-cmp-data-layer="${card.data.json}">
+    <div class="cmp-redeem-component__content">
+    </div>
+</article>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-redeem-component'}"></sly>
