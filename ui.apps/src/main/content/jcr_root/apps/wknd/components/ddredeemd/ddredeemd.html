@@ -1,0 +1,12 @@
+<!--/* Dd Redeem D — presentation only; all logic lives in com.adobe.aem.guides.wknd.core.models.DdRedeemD. */-->
+<sly data-sly-use.card="com.adobe.aem.guides.wknd.core.models.DdRedeemD"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${false}"></sly>
+<article data-sly-test="${hasContent}"
+         id="${card.id}"
+         class="cmp-dd-redeem-d cmp-dd-redeem-d--${card.variant}"
+         data-cmp-data-layer="${card.data.json}">
+    <div class="cmp-dd-redeem-d__content">
+    </div>
+</article>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-dd-redeem-d'}"></sly>
