@@ -1,0 +1,16 @@
+{
+  "perks3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/perks3",
+    "variant": "default"
+  },
+  "perks3-invalid-variant": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/perks3",
+    "variant": "<script>alert(1)</script>"
+  },
+  "perks3-empty": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/perks3"
+  }
+}
