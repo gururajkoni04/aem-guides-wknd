@@ -1,0 +1,12 @@
+<!--/* Perks3 — presentation only; all logic lives in com.adobe.aem.guides.wknd.core.models.Perks3. */-->
+<sly data-sly-use.card="com.adobe.aem.guides.wknd.core.models.Perks3"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${false}"></sly>
+<article data-sly-test="${hasContent}"
+         id="${card.id}"
+         class="cmp-perks3 cmp-perks3--${card.variant}"
+         data-cmp-data-layer="${card.data.json}">
+    <div class="cmp-perks3__content">
+    </div>
+</article>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-perks3'}"></sly>
