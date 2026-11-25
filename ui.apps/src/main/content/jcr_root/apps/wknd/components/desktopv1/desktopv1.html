@@ -1,0 +1,41 @@
+<!--/* desktopv1.html: hero teaser with earn-rate tiles. Extends Core Teaser v2; inherited parts render through the Core model. */-->
+
+<section data-sly-use.desktopv1="com.adobe.aem.guides.wknd.core.models.DesktopV1"
+         data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+         data-sly-test.hasContent="${!desktopv1.empty}"
+         id="${desktopv1.id}"
+         class="cmp-desktopv1"
+         aria-labelledby="${'{0}-title' @ format=desktopv1.id}"
+         data-cmp-data-layer="${desktopv1.data.json}">
+    <div class="cmp-desktopv1__image" data-sly-test="${desktopv1.imageResource}">
+        <sly data-sly-resource="${desktopv1.imageResource @ decorationTagName='div'}"></sly>
+    </div>
+    <div class="cmp-desktopv1__content">
+        <p class="cmp-desktopv1__pretitle" data-sly-test="${desktopv1.pretitle}">${desktopv1.pretitle}</p>
+        <h3 data-sly-element="${desktopv1.titleType || 'h3'}"
+            id="${'{0}-title' @ format=desktopv1.id}"
+            class="cmp-desktopv1__title"><a data-sly-test.titleLinked="${desktopv1.link.valid && !desktopv1.titleLinkHidden}"
+               class="cmp-desktopv1__title-link"
+               data-sly-attribute="${desktopv1.link.htmlAttributes}">${desktopv1.title}</a><sly data-sly-test="${!titleLinked}">${desktopv1.title}</sly></h3>
+        <div class="cmp-desktopv1__description" data-sly-test="${desktopv1.description}">${desktopv1.description @ context='html'}</div>
+        <ul class="cmp-desktopv1__actions"
+            data-sly-test="${desktopv1.actionsEnabled && desktopv1.actions}"
+            data-sly-list.action="${desktopv1.actions}">
+            <li class="cmp-desktopv1__action-item">
+                <a class="cmp-desktopv1__action ${actionList.first ? 'cmp-desktopv1__action--primary' : 'cmp-desktopv1__action--secondary'}"
+                   data-sly-attribute="${action.link.htmlAttributes}"
+                   data-cmp-clickable="${action.data ? true : false}"
+                   data-cmp-data-layer="${action.data.json}">${action.title}</a>
+            </li>
+        </ul>
+    </div>
+    <ul class="cmp-desktopv1__tiles"
+        data-sly-test="${desktopv1.earnTiles}"
+        data-sly-list.tile="${desktopv1.earnTiles}">
+        <li class="cmp-desktopv1__tile">
+            <p class="cmp-desktopv1__tile-rate">${tile.title}</p>
+            <p class="cmp-desktopv1__tile-description" data-sly-test="${tile.description}">${tile.description}</p>
+        </li>
+    </ul>
+</section>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
