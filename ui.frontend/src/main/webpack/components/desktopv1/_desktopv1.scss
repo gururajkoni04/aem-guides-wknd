@@ -1,0 +1,200 @@
+// Desktop V1 (wknd/components/desktopv1): hero teaser with earn-rate tiles.
+// Design values that have no existing site variable are declared here with a desktopv1- prefix.
+// The !default flags let the site's own variables override them.
+
+$desktopv1-color-accent: #ff3008 !default;
+$desktopv1-color-text: #000000 !default;
+$desktopv1-color-surface: #ffffff !default;
+$desktopv1-color-tile-border: #d9d9d9 !default;
+$desktopv1-breakpoint-medium: 768px !default;
+$desktopv1-breakpoint-large: 1200px !default;
+$desktopv1-focus-outline-width: 3px !default;
+$desktopv1-transition-duration: 0.2s !default;
+
+.cmp-desktopv1 {
+    background-color: $desktopv1-color-surface;
+    color: $desktopv1-color-text;
+
+    &__image {
+        margin: 0;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1440 / 643;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem 1.25rem;
+    }
+
+    &__pretitle {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.25;
+    }
+
+    // Accent color is used only for large text (about 3.7:1 on white)
+    &__title {
+        margin: 0;
+        color: $desktopv1-color-accent;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.3px;
+    }
+
+    &__title-link {
+        color: inherit;
+        text-decoration: underline;
+        transition: color $desktopv1-transition-duration ease-in-out;
+
+        &:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        &:focus-visible {
+            outline: $desktopv1-focus-outline-width solid $desktopv1-color-text;
+            outline-offset: 2px;
+        }
+    }
+
+    &__description {
+        font-size: 1.125rem;
+        line-height: 1.3;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__action-item {
+        margin: 0;
+    }
+
+    &__action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.75rem;
+        min-height: 2.75rem;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid $desktopv1-color-text;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.25;
+        text-decoration: none;
+        transition: background-color $desktopv1-transition-duration ease-in-out,
+            color $desktopv1-transition-duration ease-in-out;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:focus-visible {
+            outline: $desktopv1-focus-outline-width solid $desktopv1-color-text;
+            outline-offset: 2px;
+        }
+
+        // Black text on the accent keeps normal-size CTA text above 4.5:1
+        &--primary {
+            border-color: $desktopv1-color-accent;
+            background-color: $desktopv1-color-accent;
+            color: $desktopv1-color-text;
+        }
+
+        &--secondary {
+            background-color: transparent;
+            color: $desktopv1-color-text;
+        }
+    }
+
+    &__tiles {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 0;
+        padding: 0 1.25rem 2rem;
+        list-style: none;
+    }
+
+    &__tile {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 1.5rem 1rem;
+        border: 1px solid $desktopv1-color-tile-border;
+        text-align: center;
+    }
+
+    &__tile-rate {
+        margin: 0;
+        color: $desktopv1-color-accent;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.285;
+    }
+
+    &__tile-description {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 1.28;
+    }
+
+    @media (min-width: $desktopv1-breakpoint-medium) {
+        &__content {
+            padding: 3rem 2.5rem;
+        }
+
+        &__title {
+            font-size: 2.75rem;
+            line-height: 1;
+        }
+
+        &__tiles {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0 2.5rem 3rem;
+        }
+    }
+
+    @media (min-width: $desktopv1-breakpoint-large) {
+        &__title {
+            font-size: 3.375rem;
+            line-height: 0.926;
+        }
+
+        &__tiles {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        &__tile-rate {
+            font-size: 4.7175rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__title-link,
+        &__action {
+            transition: none;
+        }
+    }
+}

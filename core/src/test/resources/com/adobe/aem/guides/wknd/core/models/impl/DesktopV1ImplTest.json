@@ -1,0 +1,72 @@
+{
+  "desktopv1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/desktopv1",
+    "jcr:title": "Welcome to the DoorDash Rewards Mastercard",
+    "pretitle": "Make every purchase more rewarding",
+    "jcr:description": "<p>Earn cash back on everyday spending</p>",
+    "titleType": "h1",
+    "earnTiles": {
+      "jcr:primaryType": "nt:unstructured",
+      "item0": {
+        "jcr:primaryType": "nt:unstructured",
+        "title": "4%",
+        "description": "on DoorDash and Caviar orders"
+      },
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "title": "3%",
+        "description": "on dining directly from a restaurant"
+      },
+      "item2": {
+        "jcr:primaryType": "nt:unstructured",
+        "title": "2%",
+        "description": "on grocery stores, online or in person"
+      },
+      "item3": {
+        "jcr:primaryType": "nt:unstructured",
+        "title": "1%",
+        "description": "on all other purchases"
+      }
+    }
+  },
+  "without-tiles": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/desktopv1",
+    "jcr:title": "Welcome to the DoorDash Rewards Mastercard"
+  },
+  "empty-tiles": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/desktopv1",
+    "jcr:title": "Welcome to the DoorDash Rewards Mastercard",
+    "earnTiles": {
+      "jcr:primaryType": "nt:unstructured"
+    }
+  },
+  "invalid-tiles": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/desktopv1",
+    "jcr:title": "Welcome to the DoorDash Rewards Mastercard",
+    "earnTiles": {
+      "jcr:primaryType": "nt:unstructured",
+      "item0": {
+        "jcr:primaryType": "nt:unstructured",
+        "title": "   ",
+        "description": "on DoorDash and Caviar orders"
+      },
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "title": " 2% ",
+        "description": "   "
+      },
+      "item2": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "on all other purchases"
+      }
+    }
+  },
+  "empty": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/desktopv1"
+  }
+}
